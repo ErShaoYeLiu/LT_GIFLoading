@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-
+#import "LTGIFLoader.h"
 @interface ViewController ()
 
 @end
@@ -16,8 +16,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-}
+    self.view.backgroundColor = [UIColor colorWithWhite:0.6 alpha:0.5];
+    /**< 设置imageview */
+    UIImageView * imageview = [[UIImageView alloc] init];
+    imageview.bounds = CGRectMake(0, 0, 400, 200);
+    imageview.center = self.view.center;
+    
+    [LTGIFLoader loadGIFFromImageName:@"等待.gif" to:imageview];
+    
+    [self.view addSubview:imageview];}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
